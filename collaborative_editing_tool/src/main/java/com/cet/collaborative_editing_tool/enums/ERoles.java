@@ -1,4 +1,4 @@
-package com.cet.collaborative_editing_tool;
+package com.cet.collaborative_editing_tool.enums;
 
 public enum ERoles {
     ADMIN,

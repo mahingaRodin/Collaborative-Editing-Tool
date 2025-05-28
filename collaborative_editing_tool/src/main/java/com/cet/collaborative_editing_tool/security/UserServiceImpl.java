@@ -1,11 +1,12 @@
-package com.citizen.engagement_system_be.util;
+package com.cet.collaborative_editing_tool.security;
 
-import com.citizen.engagement_system_be.repository.UserRepository;
+import com.cet.collaborative_editing_tool.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
+
 public class UserServiceImpl implements UserService {
     private  final UserRepository userRepository;
 

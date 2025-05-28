@@ -1,4 +1,4 @@
-package com.citizen.engagement_system_be.util;
+package com.cet.collaborative_editing_tool.security;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

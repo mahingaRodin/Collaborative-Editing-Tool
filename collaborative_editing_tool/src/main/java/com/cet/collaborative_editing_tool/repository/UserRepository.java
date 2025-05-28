@@ -1,4 +1,10 @@
 package com.cet.collaborative_editing_tool.repository;
 
-public class UserRepository {
+import com.cet.collaborative_editing_tool.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
 }
