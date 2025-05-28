@@ -21,9 +21,10 @@ public class JwtUtil {
     private String expirationInMs;
 
     private String generateToken(Map<String, Object> extraClaims, UserDetails details) {
+        Date expiryDate = new Date(new Date().getTime() + Long.parseLong(expirationInMs));
         return Jwts.builder().setClaims(extraClaims).setSubject(details.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(extractExpiration(expirationInMs))
+                .setExpiration(expiryDate)
                 .signWith(getSigningKey() , SignatureAlgorithm.HS256).compact();
     }
 

@@ -1,5 +1,6 @@
 package com.cet.collaborative_editing_tool.model;
 
+import com.cet.collaborative_editing_tool.dto.UserDto;
 import com.cet.collaborative_editing_tool.enums.ERoles;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,8 @@ public class User implements UserDetails {
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    private String name;
 
     private ERoles role;
     private String password;
@@ -59,6 +62,13 @@ public class User implements UserDetails {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -82,5 +92,14 @@ public class User implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public UserDto getUserDto() {
+        UserDto dto = new UserDto();
+        dto.setId(id);
+        dto.setName(name);
+        dto.setEmail(email);
+        dto.setRole(role);
+
+        return dto;
     }
 }
