@@ -41,7 +41,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth
-                -> auth         .requestMatchers("/api/auth/**").permitAll()
+                -> auth         .requestMatchers("/api/v3/auth/**").permitAll()
                                 .requestMatchers("/ws/**").permitAll() //websokct endpoints
                                 .anyRequest().authenticated()
                 )
